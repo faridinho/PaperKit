@@ -1,4 +1,4 @@
-# PaperKit Toolkit
+# PaperKit
 
 Paperkit is a desktop application designed to simplify common academic PDF workflows. It helps researchers and students rename PDF papers using extracted titles, compress PDF files, export selected metadata to Excel, and extract high-quality embedded images from PDF documents.
 
