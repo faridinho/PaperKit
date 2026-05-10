@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Output folders
+output/
+extracted_images/
+compressed/
+renamed/
+
+# Logs and reports
+*.log
+paperkit_*_report.xlsx
+pdf_metadata.xlsx
+duplicate_report.xlsx
+paperkit_citations.ris
+paperkit_citations.bib
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
