@@ -231,27 +231,6 @@ Some academic figures are stored as vector graphics rather than embedded raster 
 
 ---
 
-### Drag and Drop
-
-PaperKit supports drag-and-drop for easier file and folder selection.
-
-Depending on the tool, users can drag:
-
-- PDF folders
-- Output folders
-- Single PDF files for image extraction
-
----
-
-### Appearance Modes
-
-PaperKit includes appearance options:
-
-- Dark
-- Light
-- System
-
----
 
 ## Screenshots
 
@@ -281,16 +260,6 @@ Example README links:
 PaperKit is designed to avoid accidental changes to original files.
 
 By default, users should use preview and copy-based workflows before applying changes. Direct renaming of original files should only be used after carefully reviewing the preview table.
-
----
-
-## Known Limitations
-
-- PDF metadata can be incomplete or incorrect.
-- Citation export quality depends on metadata quality.
-- Some academic figures are vector graphics and may not appear in image extraction.
-- PDF compression requires Ghostscript.
-- Unsigned Windows builds may trigger a SmartScreen warning.
 
 ---
 
