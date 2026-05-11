@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/paperkit_logo.png" alt="PaperKit Logo" width="120"/>
+<img src="assets/paperkit_logo.png" alt="PaperKit Logo" width="200"/>
 
 # PaperKit
 
