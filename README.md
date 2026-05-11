@@ -1,284 +1,133 @@
-<p align="center">
-  <img src="assets/paperkit_logo.png" alt="PaperKit logo" width="140">
-</p>
+<div align="center">
 
-<h1 align="center">PaperKit</h1>
+<img src="assets/paperkit_logo.png" alt="PaperKit Logo" width="120"/>
 
-<p align="center">
-  Academic PDF workflow toolkit for researchers, students, and scientists.
-</p>
+# PaperKit
 
-<p align="center">
-  Rename PDFs · Compress PDFs · Export metadata · Generate citations · Detect duplicates · Extract images
-</p>
+**Academic PDF workflows, simplified.**
 
----
+Free desktop application for researchers and students who manage large collections of research papers.
 
-## Overview
+[![Release](https://img.shields.io/github/v/release/faridinho/PaperKit?style=flat-square&color=2563EB)](https://github.com/faridinho/PaperKit/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11-blue?style=flat-square&logo=windows)](https://github.com/faridinho/PaperKit/releases/latest)
+[![Free](https://img.shields.io/badge/Price-Free%20forever-2563EB?style=flat-square)](https://github.com/faridinho/PaperKit/releases/latest)
 
-**PaperKit** is a desktop application designed to make academic PDF workflows faster, safer, and more organized.
+[**⬇ Download for Windows**](https://github.com/faridinho/PaperKit/releases/latest) · [Report a bug](https://github.com/faridinho/PaperKit/issues) · [Request a feature](https://github.com/faridinho/PaperKit/issues)
 
-It helps researchers, students, and scientists manage collections of research papers by providing tools for:
+![PaperKit Screenshot](assets/screenshot.png)
 
-- Renaming PDFs using extracted paper titles
-- Previewing filenames before applying changes
-- Detecting duplicate PDF files
-- Compressing PDFs in batch
-- Exporting metadata to Excel
-- Generating RIS and BibTeX citation files
-- Extracting selected embedded images from PDF papers
-
-PaperKit is designed to be safe by default. It does **not** modify original files unless the user explicitly enables direct renaming.
+</div>
 
 ---
 
-## Why PaperKit?
+## What is PaperKit?
 
-Academic PDF collections can quickly become messy. Files often have names like:
+If you work with research papers, you know the problem. Your downloads folder is full of files named `paper_final_v3.pdf`, `download (1).pdf`, and `arxiv_2301.07041.pdf`. You have hundreds of PDFs with no structure, metadata buried inside them, and figures you need to extract one by one.
 
-```text
-1-s2.0-S016777992200230-main.pdf
-article.pdf
-download.pdf
-paper_final.pdf
-```
-
-PaperKit helps turn those files into cleaner, more useful names based on extracted titles.
-
-PaperKit is also useful when preparing batches of papers for processing by an **AI agent**, large language model workflow, or document-analysis pipeline. Compressing a batch of PDFs can significantly reduce file size, making uploads faster and easier when sending many papers to an AI system for summarization, extraction, classification, or literature review support.
-
----
-
-## Installation
-
-Go to the **Releases** page and download:
-
-```text
-PaperKit-v1.2.0-Windows.zip
-```
-
-Extract the ZIP file and run:
-
-```text
-PaperKit.exe
-```
-
-> Important: Keep all files and folders together. Do not move only `PaperKit.exe` out of the folder.
+PaperKit fixes all of that. It is a free Windows desktop application that automates the most repetitive PDF tasks researchers face — without ever touching your original files.
 
 ---
 
 ## Features
 
-### Rename PDFs
+### 📄 Rename PDFs by Title
+PaperKit reads the actual title embedded inside each PDF and renames the file automatically. Drop in a folder of 200 papers and get them all properly named in seconds. Duplicate detection is built in so nothing gets overwritten.
 
-Rename academic PDFs using titles extracted from the PDF metadata or first page.
+### 🗜️ Compress PDFs
+Reduce file sizes using quality profiles tuned for academic documents. Useful for email attachments, journal submission systems with upload limits, or simply keeping a large library manageable on disk.
 
-Features include:
+### 📊 Export Metadata to Excel
+Select any batch of papers and export their metadata — title, authors, year, keywords, and more — directly into a structured `.xlsx` spreadsheet. Built for systematic reviews, literature tracking, and citation management.
 
-- Preview before renaming
-- Optional numbering
-- Custom starting number
-- Safe copy-based renaming
-- Optional direct renaming of original files
-- Excel operation report
+### 📎 Export Citations (RIS & BibTeX)
+Automatically generate `.ris` and `.bib` citation files from the metadata embedded in your PDFs. Import directly into Zotero, Mendeley, EndNote, or any reference manager that accepts standard formats.
 
-Example output:
-
-```text
-1-Deep Learning for Medical Image Analysis.pdf
-2-Privacy Concerns in AI-Based Shopping Systems.pdf
-3-Hydrogel Drug Delivery Systems.pdf
-```
+### 🖼️ Extract Embedded Images
+Preview every image embedded inside a PDF and choose exactly which ones to extract. Outputs full-resolution files — ideal for reusing figures from published papers in your own presentations or manuscripts.
 
 ---
 
-### Duplicate Detection
+## Download & Install
 
-Detect exact duplicate PDFs inside a folder.
+No installation required. PaperKit ships as a standalone `.exe` — just download, unzip, and run.
 
-PaperKit compares file content using hashing, not only filenames. This means it can detect duplicate PDFs even if they have different names.
+**[⬇ Download the latest release →](https://github.com/faridinho/PaperKit/releases/latest)**
 
-Duplicate detection is available inside the Rename tab.
+1. Download `PaperKit-v1.2.0-windows.zip` from the releases page
+2. Extract the zip to any folder
+3. Run `PaperKit.exe`
 
-Output:
+> **Note:** Windows may show a SmartScreen warning on first launch because the app is not code-signed. Click **"More info" → "Run anyway"** to proceed. This is normal for open-source desktop software distributed without a paid certificate.
 
-```text
-duplicate_report.xlsx
-```
-
-PaperKit does not delete duplicates automatically. Users should review the report before removing files.
+**System requirements:** Windows 10 or 11 (64-bit)
 
 ---
 
-### Compress PDFs
+## How It Works
 
-Compress PDFs in batch using Ghostscript.
+PaperKit is designed around one principle: **your original files are never modified.** Every workflow operates on a copy of your files and writes output to a folder you choose. You can always undo anything by simply deleting the output folder.
 
-Compression can be especially useful when preparing a large collection of papers for:
-
-- AI-agent document processing
-- Uploading papers to LLM tools
-- Literature review workflows
-- Cloud storage
-- Email sharing
-- Archiving large PDF collections
-
-Compression quality options include:
-
-- `screen` — smallest file size, lower quality
-- `ebook` — balanced quality and size
-- `printer` — higher quality
-- `prepress` — highest quality, larger output
-
-Output:
-
-```text
-compressed/
-paperkit_compression_report.xlsx
+```
+Your PDFs  →  PaperKit  →  Output folder (copies)
+                ↑
+         Originals untouched
 ```
 
-> **Note:** PDF compression requires Ghostscript.
-
-Download Ghostscript here:
-
-https://ghostscript.com/releases/gsdnld.html
-
-Rename, metadata export, citation export, duplicate detection, and image extraction do **not** require Ghostscript.
+All processing happens locally on your machine. No internet connection is required, no data is uploaded anywhere, and no account is needed.
 
 ---
-
-### Metadata Export
-
-Export selected PDF metadata fields to Excel.
-
-Available fields may include:
-
-- ID
-- Filename
-- Title
-- Author
-- Year
-- DOI
-- Page count
-- File size
-
-Output:
-
-```text
-pdf_metadata.xlsx
-paperkit_metadata_report.xlsx
-```
-
-Metadata quality depends on the information stored in the PDF. Some PDFs contain incomplete or incorrect metadata, so users should review the Excel file before relying on it for formal academic records.
-
----
-
-### Citation Export
-
-Generate citation files automatically from extracted PDF metadata.
-
-Supported formats:
-
-- RIS
-- BibTeX
-
-RIS files can be imported into tools such as:
-
-- Mendeley
-- EndNote
-- Zotero
-- RefWorks
-
-BibTeX files can be used with:
-
-- LaTeX
-- JabRef
-- Zotero
-- Mendeley
-
-Output:
-
-```text
-paperkit_citations.ris
-paperkit_citations.bib
-paperkit_citation_report.xlsx
-```
-
-> Citation quality depends on PDF metadata quality. Always review imported records in your reference manager.
-
----
-
-### Image Extraction
-
-Extract embedded images from a single PDF.
-
-Features include:
-
-- Scan PDF images before extraction
-- Preview selected images
-- Select specific images to extract
-- Extract original embedded image bytes without resizing or recompression
-- Export image extraction report
-
-Output:
-
-```text
-extracted_images/
-paperkit_image_extraction_report.xlsx
-```
-
-Some academic figures are stored as vector graphics rather than embedded raster images. These may be visible in the PDF but may not appear in the image extraction list.
-
----
-
 
 ## Screenshots
 
-Add screenshots to the repository in:
+| Rename | Metadata Export |
+|--------|----------------|
+| ![Rename tab](assets/screenshot_rename.png) | ![Metadata tab](assets/screenshot_metadata.png) |
 
-```text
-docs/screenshots/
-```
-
-Example README links:
-
-```markdown
-![Rename tab](docs/screenshots/rename.png)
-![Compress tab](docs/screenshots/compress.png)
-![Metadata tab](docs/screenshots/metadata.png)
-![Citation tab](docs/screenshots/citations.png)
-![Image extraction tab](docs/screenshots/image-extraction.png)
-```
+| Image Extraction | Citations |
+|-----------------|-----------|
+| ![Image tab](assets/screenshot_images.png) | ![Citations tab](assets/screenshot_citations.png) |
 
 ---
 
+## Frequently Asked Questions
 
+**Will it modify or delete my original PDFs?**
+No. PaperKit always works on copies. Your original files are never moved, renamed, or modified unless you explicitly point the output folder to the same location.
 
+**Does it work offline?**
+Yes, completely. PaperKit runs entirely on your local machine with no internet connection required.
 
-## Notes on Safety
+**What if the PDF has no embedded title?**
+PaperKit will flag it and skip renaming for that file. You will see a clear indicator in the UI for files where no title could be detected.
 
-PaperKit is designed to avoid accidental changes to original files.
+**My antivirus flagged the .exe — is it safe?**
+Yes. False positives are common with PyInstaller-packaged Python applications because the bundled runtime looks unfamiliar to some antivirus engines. The full source code is available in this repository for anyone to inspect.
 
-By default, users should use preview and copy-based workflows before applying changes. Direct renaming of original files should only be used after carefully reviewing the preview table.
+**Is it really free?**
+Yes. Free to use, free forever, MIT licensed. No premium tier, no nag screens, no telemetry.
+
+---
+
+## Roadmap
+
+- [ ] macOS support
+- [ ] Batch citation export with custom templates
+- [ ] Folder watcher (auto-rename on new downloads)
+- [ ] Dark / light theme toggle per-session
+- [ ] Drag-and-drop from file explorer (in progress)
 
 ---
 
 ## License
 
-PaperKit is released under the MIT License.
-
-See the `LICENSE` file for details.
-
----
-
-## Author
-
-Developed by **Farid Gazani**.
+PaperKit is released under the [MIT License](LICENSE).  
+© 2026 Farid Gazani
 
 ---
 
-## Project Goal
+<div align="center">
 
-PaperKit is built to support researchers, students, and scientists who work with large collections of academic PDFs.
+Made for researchers, by a researcher. If PaperKit saves you time, consider giving the repo a ⭐ — it helps others find it.
 
-The goal is to make common PDF tasks faster, safer, and easier, especially for academic research workflows and AI-assisted document processing.
+</div>
